@@ -19,10 +19,18 @@ Outline the program:
 - Include the CRC card for each class:
   - See this link for a sample CRC card and a template to
   use for your own cards: https://docs.google.com/document/d/1JE_3Qmytk_JGztRqkPXWACJwciPH61VCx3idIlBCVFY/edit?usp=sharing
+  - Tables in markdown are not easy, so I suggest saving your CRC card
+  as an image, and including the images in the README. You can do this
+  by saving an image in the repository, and linking it here.
 - Include the main file, which will be calling all of the other code.
 
 NOTE: The initial design plan may not fully reflect your final product,
 as projects evolve over time.
+
+
+Sample image:
+
+![alt text][/image/crc.png "Sample CRC card image in a README"]
 
 ## Files
 List every file in your repository, and briefly summarize what each file contains.
@@ -78,3 +86,4 @@ thing to keep in mind is HAVE FUN with it! You are creating code to
 express your interests. Make a fun video. Break up the writing so it’s
 not so burdensome. We will have a live demo session on our last day of
 class. It'll be the most fun final exam you've ever had!
+
