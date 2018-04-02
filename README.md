@@ -30,7 +30,7 @@ as projects evolve over time.
 
 Sample image:
 
-![alt text][/image/crc.png "Sample CRC card image in a README"]
+![alt text](https://github.com/spring-2018-csc-226/p01-final-project-scott-s-example/blob/master/image/crc.png "Image of CRC card as an example.")
 
 ## Files
 List every file in your repository, and briefly summarize what each file contains.
