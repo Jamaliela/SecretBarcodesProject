@@ -28,7 +28,7 @@ NOTE: The initial design plan may not fully reflect your final product,
 as projects evolve over time.
 
 
-Sample image:
+**Sample image**:
 
 ![alt text](https://github.com/spring-2018-csc-226/p01-final-project-scott-s-example/blob/master/image/crc.png "Image of CRC card as an example.")
 
