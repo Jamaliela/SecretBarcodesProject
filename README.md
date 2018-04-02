@@ -21,7 +21,7 @@ Outline the program:
   use for your own cards: https://docs.google.com/document/d/1JE_3Qmytk_JGztRqkPXWACJwciPH61VCx3idIlBCVFY/edit?usp=sharing
   - Tables in markdown are not easy, so I suggest saving your CRC card
   as an image, and including the images in the README. You can do this
-  by saving an image in the repository, and linking it here.
+  by saving an image in the repository, and linking to it. See the sample below.
 - Include the main file, which will be calling all of the other code.
 
 NOTE: The initial design plan may not fully reflect your final product,
