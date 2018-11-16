@@ -8,14 +8,19 @@
 **Document**: https://docs.google.com/document/d/12wtOY-VaoMLb3fmeK7IcRj91hRlnNRL9ehrhWLVdwhY/edit?usp=sharing
 
 ## Motivation
-*You'll complete this section as part of Milestone 1.*
-
-In a single paragraph, explain *why* you are building this program.
-
+We are building this program because we both feel content with our work
+in barcodes. That project was challenging and it has been the one we
+invested the most time on, therefore we want to make it better by
+allowing it to first decrypt files, then find the 12-digit codes in
+those files and even accessing the web. We both like how encryption
+and decryption works and we believe that barcodes are information that
+sometimes we might want to have them encrypted because they may refer
+to secret and/or illegal items.
 ## Purpose
-*You'll complete this section as part of Milestone 1.*
+Our program will receive a ciphered message with different characters
+ and will extract the the 12-digit codes found and check for a barcode,
+ afterwards, using the urllib our program will access the web showing the item online.
 
-In no more than 2 sentences, describe **what** your program will do.
 
 ## Initial Design Plan
 - List of all the Classes used in this project:
