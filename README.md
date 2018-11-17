@@ -54,14 +54,29 @@ as projects evolve over time.
 immediate feedback which will be helpful in succeeding in the rest of the project.
 
 ## Files
-
-
-List every file in your repository, and briefly summarize what each file contains.
-
-Your project should include a separate module containing a test
-suite, similar to what was explored in **T12: Modules**. As a reminder,
-a good programmer follows test-driven development, and creates the
-test suite first!
+Our final repository will include the following:
+- A08_upc_start.py
+  - We will use this file as a class. This Class will help us to get
+  the barcode number as an input and then using the turtle module we
+  can draw the barcode.
+ - A09_caesar_cipher.py
+   - We will use this file as a Class. The functions will help us to
+   encrypt and decrypt files in txt format. Logically, files are
+   imported before being decrypted and exported once they are decrypted.
+ - Final_project.py
+   - This file will contain our main function where the other files
+    will be imported and used according to the user’s needs.
+ - Test_suite_final_project.py
+   - In order to make sure our code works properly, we have created a
+   test suite file that will test all fruitful functions.
+ - crc_barcode.jpg
+   - Contains the CRC card for the Barcode Class.
+ - crc_ceasarcipher.jpg
+   - Contains the CRC card for the Caesar Cipher class.
+ - README.md
+    - This file contains information about our design and description of
+    each file and classes that we are going to use. This documentation
+    will be useful for keeping record and a good reference for the code.
 
 ## Summary
 *You'll complete this part at the end of the project.*
