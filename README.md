@@ -42,7 +42,9 @@ Our program will receive a ciphered message with different characters
 ![alt text](image/crc_ceasarcipher.JPG "Image of CRC card for CeasarCipher")
 
 
-- Include the main file, which will be calling all of the other code.
+- The main files, which will be calling all of the other code:
+  - a08_upc_start.py
+  - a09_caesar_cipher.py
 
 
 **NOTE 1**: Your initial design plan may not fully reflect your final product,
@@ -52,7 +54,7 @@ as projects evolve over time.
 immediate feedback which will be helpful in succeeding in the rest of the project.
 
 ## Files
-*You'll complete this section as part of Milestone 1.*
+
 
 List every file in your repository, and briefly summarize what each file contains.
 
