@@ -13,6 +13,7 @@
 ####################################################################################
 
 import urllib
+import re
 
 class CeasarCipher:
     """
@@ -84,20 +85,44 @@ class CeasarCipher:
             print("Your message has been decrypted")
         return output
 
-
-    def online_search(self):
+    def search_numbers(self):
         """
 
         :return:
         """
-    pass
+    # barcode_from_text = []
+    # numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    # numbers2 = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    # with open('exporting_text', 'rt') as in_file:
+    #     if numbers and numbers2 in in_file:
+    #         barcode_from_text = barcode_from_text.append()
+    # print(barcode_from_text)
+    # for number in numbers:
+    #     if number == file_test:
+    #         barcode_from_text.append(number)
+    #         print(barcode_from_text)
+    #         barcode_from_text.append(number)
+    # print(barcode_from_text)
+    # exported_file.close()
+
+    l = []
+    with open("exporting_text") as file:
+        for line in file:
+            for i in re.findall(r'\d+', line):
+                l.append(i)
+    barcode_str = ''.join(l)
+    print(barcode_str)
+
+
+
 
 
 def main():
 
     text1 = CeasarCipher("ciphertext.txt", 7, "decrypt")
     exporting = text1.decrypt()
-    text1.export_file(exporting, "exporting_test")
+    text1.export_file(exporting, "exporting_text")
+    print(text1.search_numbers())
 
 
 main()
