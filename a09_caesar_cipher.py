@@ -72,7 +72,7 @@ class CaesarCipher:
     def encrypt(self):
         """
         Converts an original message into a ciphered message with each letter shifted to the right by the key
-        :return: a string representing the ciphertext
+        :return: a string representing the ciphertext.txt
         """
         output = ""
         for i in self.message:
@@ -90,7 +90,7 @@ class CaesarCipher:
 
     def decrypt(self):
         """
-        Converts a ciphertext into an original message by shifting each letter to the left by the key
+        Converts a ciphertext.txt into an original message by shifting each letter to the left by the key
 
         :return: a string representing the original message
         """
