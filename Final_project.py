@@ -21,7 +21,7 @@ class CeasarCipher:
     it will decrypt or decrypt the given file
     """
 
-    alphabet = "abcdefghijklmnopqrstuvwxyz1234567890"            # The alphabet, which will be used to do our shifts
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"            # The alphabet, which will be used to do our shifts
 
     def __init__(self, input_file = "ciphertext.txt", key = 7, crypt_type = "decrypt"):
         """
@@ -73,8 +73,8 @@ class CeasarCipher:
         # TODO Complete the decrypt method
         output = ""
         for i in self.cipher:
-            if i.lower() in self.alphabet:
-                new_letter = self.alphabet.find(i.lower())
+            if i.upper() in self.alphabet:
+                new_letter = self.alphabet.find(i.upper())
                 # we use the module to return the correct module after the inverse
                 # when the index is negative it will go back to the end of the alphabet
                 output += self.alphabet[new_letter - self.key % 36]
@@ -98,3 +98,6 @@ def main():
     text1 = CeasarCipher("ciphertext.txt", 7, "decrypt")
     exporting = text1.decrypt()
     text1.export_file(exporting, "exporting_test")
+
+
+main()
