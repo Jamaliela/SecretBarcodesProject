@@ -21,7 +21,7 @@ class CeasarCipher:
     it will decrypt or decrypt the given file
     """
 
-    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"            # The alphabet, which will be used to do our shifts
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"            # The alphabet, which will be used to do our shifts
 
     def __init__(self, input_file = "ciphertext.txt", key = 7, crypt_type = "decrypt"):
         """
@@ -104,13 +104,13 @@ class CeasarCipher:
     # print(barcode_from_text)
     # exported_file.close()
 
-    l = []                                                      # starting a new list
-    with open("exporting_text") as file:                        # opening the file and naming it file for the loop
-        for line in file:                                       # reading every line in the file
-            for i in re.findall(r'\d+', line):                  # using re to find all the integers in the file and lines
-                l.append(i)                                     # appending those integers in the list
-    barcode_str = ''.join(l)                                    # joining all the integers together into a string
-    print(barcode_str)                                          # printing the barcode string that will be used later to check the barcode and find item
+    # l = []                                                      # starting a new list
+    # with open("exporting_text") as file:                        # opening the file and naming it file for the loop
+    #     for line in file:                                       # reading every line in the file
+    #         for i in re.findall(r'\d+', line):                  # using re to find all the integers in the file and lines
+    #             l.append(i)                                     # appending those integers in the list
+    # barcode_str = ''.join(l)                                    # joining all the integers together into a string
+    # print(barcode_str)                                          # printing the barcode string that will be used later to check the barcode and find item
 
 def main():
 
