@@ -105,24 +105,18 @@ class CeasarCipher:
     # print(barcode_from_text)
     # exported_file.close()
 
-    l = []
-    with open("exporting_text") as file:
-        for line in file:
-            for i in re.findall(r'\d+', line):
-                l.append(i)
-    barcode_str = ''.join(l)
-    print(barcode_str)
-
-
-
-
+    l = []                                                      # starting a new list
+    with open("exporting_text") as file:                        # opening the file and naming it file for the loop
+        for line in file:                                       # reading every line in the file
+            for i in re.findall(r'\d+', line):                  # using re to find all the integers in the file and lines
+                l.append(i)                                     # appending those integers in the list
+    barcode_str = ''.join(l)                                    # joining all the integers together into a string
+    print(barcode_str)                                          # printing the barcode string that will be used later to check the barcode and find item
 
 def main():
 
-    text1 = CeasarCipher("ciphertext.txt", 7, "decrypt")
-    exporting = text1.decrypt()
-    text1.export_file(exporting, "exporting_text")
-    print(text1.search_numbers())
-
+    text1 = CeasarCipher("ciphertext.txt", 7, "decrypt")        # assigning text1 the class and opening the message to decrpyt
+    exporting = text1.decrypt()                                 # decrypting the file
+    text1.export_file(exporting, "exporting_text")              # naming the new file that has been decrypted
 
 main()
