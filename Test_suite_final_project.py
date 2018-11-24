@@ -31,16 +31,13 @@ def final_project_test_suite():
     testit(caesar.decrypt() == "THIS MESSAGE HAS TO BE")
 
 
-    # tests decrypting a string with punctuation
-    caesar.key = 6
-    caesar.cipher = "OZ'Y G YU-YU QOTJ UL JGE!"
+    # tests decrypting a string with punctuation and numbers
+    caesar.key = 7
+    caesar.cipher = "OLSSV, V1Y UHTLZ HYL LTLS5 HUK LSH. 3L SV2L 9 OH2L H NYF 0PTL"
+    testit(caesar.decrypt() == "HELLO, OUR NAMES ARE EMELY AND ELA. WE LOVE 2 HAVE A GR8 TIME")
 
-    testit(caesar.decrypt() == "IT'S A SO-SO KIND OF DAY!")
 
-    # adding new tests
-
-    testit(caesar.decrypt() == "CICERO GREETS CAESAR, IMPERATOR.")
-    # what other tests should you add?
+    # adding new tests (for later)
 
 
 final_project_test_suite()
