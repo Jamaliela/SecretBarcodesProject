@@ -11,9 +11,8 @@
 # Acknowledgements:
 
 ####################################################################################
-
-import urllib
 import re
+
 
 class CeasarCipher:
     """
@@ -45,10 +44,10 @@ class CeasarCipher:
 
         :return: a string representing the contents of the file
         """
-        f = open(self.input_file, "r")
-        if self.crypt_type == "decrypt":
+        f = open(self.input_file, "r")                          # opening the input file to read it
+        if self.crypt_type == "decrypt":                        # if the action is decrypt the file will be read
             self.cipher = f.read()                   # Set self.cipher to the file contents
-        f.close()
+        f.close()                                      # closing the file
         if __name__ == "__main__":
             print("File imported: {0}".format(self.input_file))
 
@@ -59,9 +58,9 @@ class CeasarCipher:
         :param text_to_export: the string to be written to the exported file
         :param filename: a string representing the name of the file to be exported to
         """
-        f = open(filename, "w")
+        f = open(filename, "w")                             # creating a new file to write in it the text to export
         f.write(text_to_export)
-        f.close()
+        f.close()                                           # closing the file
         if __name__ == "__main__":
             print("File exported: {0}".format(filename))
 
@@ -73,8 +72,8 @@ class CeasarCipher:
         """
         # TODO Complete the decrypt method
         output = ""
-        for i in self.cipher:
-            if i.upper() in self.alphabet:
+        for i in self.cipher:                                   # for loop to shift letters for decryption
+            if i.upper() in self.alphabet:                      # if letters are upper case
                 new_letter = self.alphabet.find(i.upper())
                 # we use the module to return the correct module after the inverse
                 # when the index is negative it will go back to the end of the alphabet
@@ -87,7 +86,7 @@ class CeasarCipher:
 
     def search_numbers(self):
         """
-
+        This function opens the decrypted file and retrieves the integers that form the barcode to put them together into a string.
         :return:
         """
     # barcode_from_text = []
