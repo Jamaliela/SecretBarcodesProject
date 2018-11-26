@@ -90,9 +90,13 @@ class CeasarCipher:
 
         :return:
         """
-    # barcode_from_text = []
-    # numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    # numbers2 = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    barcode_from_text = []
+    numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    with open("exporting_text", 'r') as exported_file:
+        for i in exported_file:
+            for number in i.split():
+                print(number)
+
     # with open('exporting_text', 'rt') as in_file:
     #     if numbers and numbers2 in in_file:
     #         barcode_from_text = barcode_from_text.append()
@@ -105,13 +109,13 @@ class CeasarCipher:
     # print(barcode_from_text)
     # exported_file.close()
 
-    l = []
-    with open("exporting_text") as file:
-        for line in file:
-            for i in re.findall(r'\d+', line):
-                l.append(i)
-    barcode_str = ''.join(l)
-    print(barcode_str)
+    # l = []
+    # with open("exporting_text") as file:
+    #     for line in file:
+    #         for i in re.findall(r'\d+', line):
+    #             l.append(i)
+    # barcode_str = ''.join(l)
+    # print(barcode_str)
 
 
 
