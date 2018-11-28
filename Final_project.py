@@ -90,12 +90,25 @@ class CeasarCipher:
 
         :return:
         """
-    barcode_from_text = []
-    numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-    with open("exporting_text", 'r') as exported_file:
-        for i in exported_file:
-            for number in i.split():
-                print(number)
+
+    dict = {
+        "0": 0, "1": 1, "2": 2, "3": 3, "4": 4,
+        "5": 5, "6": 6, "7": 7, "8": 8, "9": 9,
+        "zero": 0, "one": 1, "two": 2, "three": 3,
+        "four": 4, "five": 5, "six": 6, "seven": 7,
+        "eight": 8, "nine": 9
+    }
+    expo_file = open("exporting_text", "r")
+    for line in expo_file:
+        words = line.split()
+        for word in words:
+            if 
+    # barcode_from_text = []
+    # numbers = ["0", 1, 2, 3, 4, 5, 6, 7, 8, 9, "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    # open("exporting_text", 'r') as exported_file:
+    #     for i in exported_file:
+    #         for number in i.split():
+    #             print(number)
 
     # with open('exporting_text', 'rt') as in_file:
     #     if numbers and numbers2 in in_file:
@@ -112,7 +125,8 @@ class CeasarCipher:
     # l = []
     # with open("exporting_text") as file:
     #     for line in file:
-    #         for i in re.findall(r'\d+', line):
+    #         for element in line:
+
     #             l.append(i)
     # barcode_str = ''.join(l)
     # print(barcode_str)
