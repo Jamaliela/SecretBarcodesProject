@@ -94,45 +94,24 @@ class CeasarCipher:
     dict = {
         "0": 0, "1": 1, "2": 2, "3": 3, "4": 4,
         "5": 5, "6": 6, "7": 7, "8": 8, "9": 9,
-        "zero": 0, "one": 1, "two": 2, "three": 3,
-        "four": 4, "five": 5, "six": 6, "seven": 7,
-        "eight": 8, "nine": 9
+        "ZERO": 0, "ONE": 1, "TWO": 2, "THREE": 3,
+        "FOUR": 4, "FIVE": 5, "SIX": 6, "SEVEN": 7,
+        "EIGHT": 8, "NINE": 9, "FIFTH": 5, "FIRST": 1,
+        "SECOND": 2, "THIRD": 3, "FOURTH": 4, "SIXTH": 6,
+        "SEVENTH": 7, "EIGHTH": 8, "NINTH": 9,
     }
+    barcode_number_list = []
     expo_file = open("exporting_text", "r")
     for line in expo_file:
         words = line.split()
         for word in words:
-            if 
-    # barcode_from_text = []
-    # numbers = ["0", 1, 2, 3, 4, 5, 6, 7, 8, 9, "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-    # open("exporting_text", 'r') as exported_file:
-    #     for i in exported_file:
-    #         for number in i.split():
-    #             print(number)
-
-    # with open('exporting_text', 'rt') as in_file:
-    #     if numbers and numbers2 in in_file:
-    #         barcode_from_text = barcode_from_text.append()
-    # print(barcode_from_text)
-    # for number in numbers:
-    #     if number == file_test:
-    #         barcode_from_text.append(number)
-    #         print(barcode_from_text)
-    #         barcode_from_text.append(number)
-    # print(barcode_from_text)
-    # exported_file.close()
-
-    # l = []
-    # with open("exporting_text") as file:
-    #     for line in file:
-    #         for element in line:
-
-    #             l.append(i)
-    # barcode_str = ''.join(l)
-    # print(barcode_str)
-
-
-
+            if word in dict:
+                barcode_number_list.append(dict[word])
+            else:
+                for letter in word:
+                    if letter in dict:
+                        barcode_number_list.append(dict[letter])
+    print(barcode_number_list)
 
 
 def main():
@@ -140,7 +119,7 @@ def main():
     text1 = CeasarCipher("ciphertext.txt", 7, "decrypt")
     exporting = text1.decrypt()
     text1.export_file(exporting, "exporting_text")
-    print(text1.search_numbers())
+    text1.search_numbers()
 
 
 main()
