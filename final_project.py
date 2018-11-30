@@ -11,7 +11,6 @@
 # Acknowledgements:
 
 ####################################################################################
-import re
 
 
 class CeasarCipher:
@@ -89,9 +88,8 @@ class CeasarCipher:
         This function opens the decrypted file and retrieves the integers that form the barcode to put them together into a string.
         :return:
         """
-<<<<<<< HEAD:Final_project.py
-
-    dict = {
+        global barcode_number_list
+        dict = {
         "0": 0, "1": 1, "2": 2, "3": 3, "4": 4,
         "5": 5, "6": 6, "7": 7, "8": 8, "9": 9,
         "ZERO": 0, "ONE": 1, "TWO": 2, "THREE": 3,
@@ -99,57 +97,52 @@ class CeasarCipher:
         "EIGHT": 8, "NINE": 9, "FIFTH": 5, "FIRST": 1,
         "SECOND": 2, "THIRD": 3, "FOURTH": 4, "SIXTH": 6,
         "SEVENTH": 7, "EIGHTH": 8, "NINTH": 9,
-    }
-    barcode_number_list = []
-    expo_file = open("exporting_text", "r")
-    for line in expo_file:
-        words = line.split()
-        for word in words:
-            if word in dict:
-                barcode_number_list.append(dict[word])
-            else:
-                for letter in word:
-                    if letter in dict:
-                        barcode_number_list.append(dict[letter])
-    print(barcode_number_list)
-=======
-    # barcode_from_text = []
-    # numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    # numbers2 = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-    # with open('exporting_text', 'rt') as in_file:
-    #     if numbers and numbers2 in in_file:
-    #         barcode_from_text = barcode_from_text.append()
-    # print(barcode_from_text)
-    # for number in numbers:
-    #     if number == file_test:
-    #         barcode_from_text.append(number)
-    #         print(barcode_from_text)
-    #         barcode_from_text.append(number)
-    # print(barcode_from_text)
-    # exported_file.close()
+        }
+        barcode_number_list = []
+        expo_file = open("exporting_text", "r")
+        for line in expo_file:
+            words = line.split()
+            for word in words:
+                if word in dict:
+                    barcode_number_list.append(dict[word])
+                else:
+                    for letter in word:
+                        if letter in dict:
+                            barcode_number_list.append(dict[letter])
+        return barcode_number_list
 
-    l = []                                                      # starting a new list
-    with open("exporting_text") as file:                        # opening the file and naming it file for the loop
-        for line in file:                                       # reading every line in the file
-            for i in re.findall(r'\d+', line):                  # using re to find all the integers in the file and lines
-                l.append(i)                                     # appending those integers in the list
-    barcode_str = ''.join(l)                                    # joining all the integers together into a string
-    print(barcode_str)                                          # printing the barcode string that will be used later to check the barcode and find item
->>>>>>> origin/ElaandEmely:final_project.py
+class Barcode:
+    """
+
+    """
+    global barcode_number_list
+
+    def __init__(self, upc_barcode=barcode_number_list):
+        self.upc_barcode = upc_barcode
+        self.turtle = None
+
+    def is_valid_input(self, upc_barcode):
+        """
+    This function verifies if the barcode is 12 digits and if they are all positive numbers.
+    :param barcode:  parameter that takes the user's input to check if it is a valid 12 digit or not
+    :return: Fruitful. a True or False Boolean value.
+    """
+
+    global upc_barcode
+
+    if len(self.upc_barcode) == 12 and barcode.isnumeric():     # checks the user's input to see if it is a valid 12 digit barcode
+        return True                 # true when the barcode is 12 digits
+
+    return False                # returns false when it is not 12 digits input
+
+
 
 
 def main():
 
-<<<<<<< HEAD:Final_project.py
-    text1 = CeasarCipher("ciphertext.txt", 7, "decrypt")
-    exporting = text1.decrypt()
-    text1.export_file(exporting, "exporting_text")
-    text1.search_numbers()
-
-=======
-    text1 = CeasarCipher("ciphertext.txt", 7, "decrypt")        # assigning text1 the class and opening the message to decrpyt
+    text1 = CeasarCipher("ciphertext.txt", 7, "decrypt")        # assigning text1 the class and opening the message to decrypt
     exporting = text1.decrypt()                                 # decrypting the file
     text1.export_file(exporting, "exporting_text")              # naming the new file that has been decrypted
->>>>>>> origin/ElaandEmely:final_project.py
+    text1.search_numbers()
 
 main()
