@@ -63,7 +63,7 @@ Our final repository will include the following:
    - We will use this file as a Class. The functions will help us to
    encrypt and decrypt files in txt format. Logically, files are
    imported before being decrypted and exported once they are decrypted.
- - Final_project.py
+ - final_project.py
    - This file will contain our main function where the other files
     will be imported and used according to the user’s needs.
  - Test_suite_final_project.py

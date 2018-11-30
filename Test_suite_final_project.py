@@ -1,4 +1,4 @@
-from Final_project import *
+from final_project import *
 import sys
 
 
@@ -14,7 +14,7 @@ def testit(did_pass):
 
 def final_project_test_suite():
     """
-    A test suite for testing our final
+    A test suite for testing the decrypt methods of the class
 
     NOTE:
     Typically, a test suite for a Class would be written into a second class entirely.
@@ -22,55 +22,22 @@ def final_project_test_suite():
     In the future, we will explore how to properly write a test suite as a separate class.
     """
 
-    # tests encrypting a normal string
-    caesar = CaesarCipher()
-    caesar.key = 3
-    caesar.message = "A test string"
-
-    testit(caesar.encrypt() == "D WHVW VWULQJ")
-
-
-    # tests encrypting a string with punctuation
-    caesar.key = 13
-    caesar.message = "It's a so-so kind of day!"
-
-    testit(caesar.encrypt() == "VG'F N FB-FB XVAQ BS QNL!")
-
-
     # tests decrypting a normal string
-    caesar.key = 3
-    caesar.cipher = "D WHVW VWULQJ"
+    caesar = CeasarCipher()
+    caesar.key = 7
+    caesar.cipher = "0OPZ TLZZHNL OHZ 0V IL"
     caesar.crypt_type = "decrypt"
 
-    testit(caesar.decrypt() == "A TEST STRING")
+    testit(caesar.decrypt() == "THIS MESSAGE HAS TO BE")
 
 
-    # tests decrypting a string with punctuation
-    caesar.key = 6
-    caesar.cipher = "OZ'Y G YU-YU QOTJ UL JGE!"
-
-    testit(caesar.decrypt() == "IT'S A SO-SO KIND OF DAY!")
-
-    # adding new tests
-
-    # test encrypting a normal string
-    caesar.key = 3
-    caesar.message = "Whatever attention or affection I may shew you"
-
-    testit(caesar.encrypt() == "ZKDWHYHU DWWHQWLRQ RU DIIHFWLRQ L PDB VKHZ BRX")
-
-    # test encrypts a string with punctuation
-    caesar.key = 14
-    caesar.message = ", and Crassus,"
-
-    testit(caesar.encrypt() == ", OBR QFOGGIG,")
-
-    # test decrypt a string with punctuation
-    caesar.key = 14
-    caesar.cipher = "QWQSFC UFSSHG QOSGOF, WADSFOHCF."
-
-    testit(caesar.decrypt() == "CICERO GREETS CAESAR, IMPERATOR.")
-    # what other tests should you add?
+    # tests decrypting a string with punctuation and numbers
+    caesar.key = 7
+    caesar.cipher = "OLSSV, V1Y UHTLZ HYL LTLS5 HUK LSH. 3L SV2L 9 OH2L H NYF 0PTL"
+    testit(caesar.decrypt() == "HELLO, OUR NAMES ARE EMELY AND ELA. WE LOVE 2 HAVE A GR8 TIME")
 
 
-CaesarCipher_test_suite()
+    # adding new tests (for later)
+
+
+final_project_test_suite()
