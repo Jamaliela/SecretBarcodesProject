@@ -11,8 +11,10 @@
 # Acknowledgements:
 
 ##################################################################################
-import  Class_Caesar_cipher as cipher
-# import Class_barcode as barcodi
+
+
+import Class_Caesar_cipher as cipher
+import Class_barcode as barcode
 #
 
 def main():
@@ -21,7 +23,7 @@ def main():
     exporting = text1.decrypt()                                 # decrypting the file
     text1.export_file(exporting, "exporting_text")              # naming the new file that has been decrypted
     print(text1.search_numbers())
-    # upc_barcode = barcodi.Barcode()
-    # upc_barcode.is_valid_input()
+    upc_barcode = barcode.Barcode()
+    upc_barcode.is_valid_input()
 
 main()

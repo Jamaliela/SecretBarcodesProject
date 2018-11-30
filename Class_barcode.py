@@ -23,8 +23,8 @@ class Barcode:
 
         :param upc_barcode:
         """
-        barcode_test = cipher.CeasarCipher("ciphertext.txt", 7, "decrypt")
-        self.upc_barcode = barcode_test.search_numbers()
+        barcode = cipher.CeasarCipher("ciphertext.txt", 7, "decrypt")
+        self.upc_barcode = barcode.search_numbers()
         self.turtle = None
 
     def is_valid_input(self):
@@ -34,6 +34,8 @@ class Barcode:
     :return: Fruitful. a True or False Boolean value.
     """
 
-        if len(self.upc_barcode) == 12 and self.upc_barcode.isnumeric():     # checks the user's input to see if it is a valid 12 digit barcode
+        if len(self.upc_barcode) == 12:     # checks the user's input to see if it is a valid 12 digit barcode
+            # and self.upc_barcode.isnumeric()
             return True                                                      # true when the barcode is 12 digits
         return False                # returns false when it is not 12 digits input
+

@@ -1,5 +1,5 @@
 
-# P01: Final Project ( name after it is done )
+# P01: decrypting barcodes
 
 **Author(s)**: Elaheh Jamali & Emely Alfaro Zavala
 

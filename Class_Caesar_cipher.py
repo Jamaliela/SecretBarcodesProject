@@ -36,7 +36,7 @@ class CeasarCipher:
         self.cipher = ""                                        # A placeholder for the cipher
         self.crypt_type = crypt_type                            # Either "encrypt" or "decrypt"
         self.import_file()                                      # Calls the import_file() method below
-        self.barcode_number = []
+        self.barcode_number = None
 
     def import_file(self):
         """
@@ -109,4 +109,5 @@ class CeasarCipher:
                     for letter in word:
                         if letter in dict:
                             self.barcode_number.append(dict[letter])
-                return str(self.barcode_number)
+
+        return str(self.barcode_number).strip('[]')
