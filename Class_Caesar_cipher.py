@@ -109,5 +109,4 @@ class CeasarCipher:
                     for letter in word:
                         if letter in dict:
                             self.barcode_number.append(dict[letter])
-
-        return str(self.barcode_number).strip('[]')
+        return self.barcode_number
