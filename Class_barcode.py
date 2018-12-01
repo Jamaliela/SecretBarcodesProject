@@ -38,4 +38,3 @@ class Barcode:
             # and self.upc_barcode.isnumeric()
             return True                                                      # true when the barcode is 12 digits
         return False                # returns false when it is not 12 digits input
-
