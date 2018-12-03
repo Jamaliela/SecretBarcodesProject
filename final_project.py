@@ -29,10 +29,11 @@ def main():
     upc_barcode.is_valid_input()
     upc_barcode.is_valid_modulo()
     upc_barcode.translate()
-    upc_barcode.drawing_blackline()
-    upc_barcode.drawing_blackline_long()
-    upc_barcode.drawing_white_line()
-    upc_barcode.drawing_blackline()
+    # upc_barcode.drawing_blackline()
+    # upc_barcode.drawing_blackline_long()
+    # upc_barcode.drawing_white_line()
+    # upc_barcode.drawing_blackline()
+    upc_barcode.position()
     wn.exitonclick()
 
 
