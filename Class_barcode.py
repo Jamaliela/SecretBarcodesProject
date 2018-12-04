@@ -210,9 +210,16 @@ class Barcode:
                 self.drawing_white_line_long()          # calling the function drawing_whiteline_long when the number is zero
             else:
                 self.drawing_blackline_long()           # calling the function drawing_blackline_long when the number is one
-        self.upc_barcode = str(self.upc_barcode).strip("[]")
+
+        # writing barcode
+        self.tess.goto(-260, -100)              # setting position to write the barcode at the end
+        self.tess.pensize(20)                   # setting the pen size
         print(self.upc_barcode)
-        # # writing barcode
-        # self.tess.goto(-260, -100)              # setting position to write the barcode at the end
-        # self.tess.pensize(20)                   # setting the pen size
-        # self.tess.write(self.upc_barcode[0]+ "    "+self.upc_barcode[1:6]+ "     "+self.upc_barcode[6:11]+"     "+self.upc_barcode[11], move=False, align="left", font=("Arial", 15, "normal"))    #writing the barcod
+
+        upc_barcode_string = ""
+        for i in self.upc_barcode:
+            upc_barcode_string += str(i)
+        self.tess.write(upc_barcode_string[0] + "   "+upc_barcode_string[1:6] + "     "+upc_barcode_string[6:11] + "      " +upc_barcode_string[11], move=False, align="left", font=("Arial", 15, "normal"))    #writing the barcod
+
+        return upc_barcode_string
+

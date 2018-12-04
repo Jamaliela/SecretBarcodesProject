@@ -172,8 +172,8 @@ def main():
         for i in guard_left:                        # loop for left guard
             if i == "0":                            # if function for drawing white lines when i is 0
                 drawing_white_line_long(t)
-        else:
-            drawing_blackline_long(t)               # # if function for drawing white lines when i is 0
+            else:
+                drawing_blackline_long(t)               # # if function for drawing white lines when i is 0
 
         t.setpos(-244, -52)                         # setting the position
 
@@ -185,7 +185,7 @@ def main():
                     drawing_blackline(t)            # if it is anything else a black line is drawn
         t.setpos(-160, -100)                        # setting the position
 
-    # center
+    #center
         guard_center = ["0", "1", "0", "1", "0"]        # creating list for center guard
         for i in guard_center:                          # loop for center guard
             if i == "0":                                 # if function for drawing white lines when i is 0
