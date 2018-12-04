@@ -42,7 +42,7 @@ class Barcode:
     """
 
         if len(self.upc_barcode) == 12: # checks the user's input to see if it is a valid 12 digit barcode
-            print(True)                                       # true when the barcode is 12 digits
+            return True                                       # true when the barcode is 12 digits
         else:
             self.upc_barcode = input("Invalid number. Enter a 12 digit code [0-9]: ")    # asking user to input a valid barcode again
 
@@ -69,7 +69,7 @@ class Barcode:
             checkdigit = 10 - final                 # subtracting 10 from the final one when the final is not zero
         else:
             checkdigit = final     # if there's no remainder in modulus of final % 10 the final value stays the same
-        print(checkdigit)                           # returning the checkdigit value
+        return checkdigit                           # returning the checkdigit value
 
     def translate(self):
         """
@@ -165,8 +165,6 @@ class Barcode:
         self.tess.penup()                                   # putting the pen up to start moving
         self.tess.setpos(-250, -100)                        # setting the left side position
         left, right = self.translate()        # calling the two return variables from the translate function
-        print(left)
-        print(right)
 
         self.guard_left = ["1", "0", "1"]                # creating list for left guard
         for i in self.guard_left:                        # loop for left guard
@@ -214,7 +212,6 @@ class Barcode:
         # writing barcode
         self.tess.goto(-260, -100)              # setting position to write the barcode at the end
         self.tess.pensize(20)                   # setting the pen size
-        print(self.upc_barcode)
 
         upc_barcode_string = ""
         for i in self.upc_barcode:
