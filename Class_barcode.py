@@ -25,9 +25,14 @@ class Barcode:
         """
         barcode = cipher.CeasarCipher("ciphertext.txt", 7, "decrypt")
         self.upc_barcode = barcode.search_numbers()
-        self.tess = None
+        self.tess = turtle.Turtle()
         self.left1 = ""
         self.rights = ""
+        self.guard_left = ""
+        self.center_left = ""
+        self.guard_center = ""
+        self.center_right = ""
+        self.guard_right = ""
 
     def is_valid_input(self):
         """
@@ -92,7 +97,7 @@ class Barcode:
         :param t: turtle object that will draw the black lines in the barcode
         :return: None. Void
         """
-        self.tess = turtle.Turtle()
+
         self.tess.color("black")                            # setting the color of the turtle to be black
         self.tess.begin_fill()                              # beginning to fill with the turtle
         for i in range(2):                          # for loop to run twice
@@ -155,7 +160,6 @@ class Barcode:
 
     def position(self):
 
-        self.tess = turtle.Turtle()
         self.tess.hideturtle()                              # hiding turtle to move its position
         self.tess.speed(0)                                  # setting the speed of the turtle
         self.tess.penup()                                   # putting the pen up to start moving
@@ -164,12 +168,12 @@ class Barcode:
         print(left)
         print(right)
 
-        guard_left = ["1", "0", "1"]                # creating list for left guard
-        for i in guard_left:                        # loop for left guard
+        self.guard_left = ["1", "0", "1"]                # creating list for left guard
+        for i in self.guard_left:                        # loop for left guard
             if i == "0":                            # if function for drawing white lines when i is 0
                 self.drawing_white_line_long()
-        else:
-            self.drawing_blackline_long()               # # if function for drawing white lines when i is 0
+            else:
+                self.drawing_blackline_long()               # # if function for drawing white lines when i is 0
 
         self.tess.setpos(-244, -52)                         # setting the position
 
@@ -182,28 +186,33 @@ class Barcode:
 
         self.tess.setpos(-160, -100)
 
-        # guard_center = ["0", "1", "0", "1", "0"]        # creating list for center guard
-        # for i in guard_center:                          # loop for center guard
-        #     if i == "0":                                 # if function for drawing white lines when i is 0
-        #         self.drawing_white_line_long()
-        #     else:
-        #         self.drawing_blackline_long()           # drawing black lines when i is not 0
-        #
-        # self.tess.setpos(-150, -52)                         # setting the position
-        # for i in range(len(right)):                 # for loop # for loop to run in the len of the first 6 elements retrieved for the center side
-        #     for j in right[i]:                      # nested for loop to run in the first 6-digit binary element inside the center side list
-        #         print(j)                            # if the element is zero then
-        #         if j == "0":                        # if the element is zero then
-        #             self.drawing_white_line()           # a white line is drawn
-        #         else:
-        #             self.drawing_blackline()            # if it is anything else a black line is drawn
-        # self.tess.setpos(-66, -100)                         # setting the position
-        #
-        # # right guard
-        # guard_left = ["1", "0", "1"]                # creating the list for the left guard
-        # for i in guard_left:                        # entering the guard_left list of values
-        #     if i == "0":                            # if function for drawing
-        #         self.drawing_white_line_long()          # calling the function drawing_whiteline_long when the number is zero
-        #     else:
-        #         self.drawing_blackline_long()           # calling the function drawing_blackline_long when the number is one
-        #
+        guard_center = ["0", "1", "0", "1", "0"]        # creating list for center guard
+        for i in guard_center:                          # loop for center guard
+            if i == "0":                                 # if function for drawing white lines when i is 0
+                self.drawing_white_line_long()
+            else:
+                self.drawing_blackline_long()           # drawing black lines when i is not 0
+
+        self.tess.setpos(-150, -52)                         # setting the position
+        for i in range(len(right)):                 # for loop # for loop to run in the len of the first 6 elements retrieved for the center side
+            for j in right[i]:                      # nested for loop to run in the first 6-digit binary element inside the center side list
+                print(j)                            # if the element is zero then
+                if j == "0":                        # if the element is zero then
+                    self.drawing_white_line()           # a white line is drawn
+                else:
+                    self.drawing_blackline()            # if it is anything else a black line is drawn
+        self.tess.setpos(-66, -100)                         # setting the position
+
+        # right guard
+        guard_left = ["1", "0", "1"]                # creating the list for the left guard
+        for i in guard_left:                        # entering the guard_left list of values
+            if i == "0":                            # if function for drawing
+                self.drawing_white_line_long()          # calling the function drawing_whiteline_long when the number is zero
+            else:
+                self.drawing_blackline_long()           # calling the function drawing_blackline_long when the number is one
+        self.upc_barcode = str(self.upc_barcode).strip("[]")
+        print(self.upc_barcode)
+        # # writing barcode
+        # self.tess.goto(-260, -100)              # setting position to write the barcode at the end
+        # self.tess.pensize(20)                   # setting the pen size
+        # self.tess.write(self.upc_barcode[0]+ "    "+self.upc_barcode[1:6]+ "     "+self.upc_barcode[6:11]+"     "+self.upc_barcode[11], move=False, align="left", font=("Arial", 15, "normal"))    #writing the barcod
