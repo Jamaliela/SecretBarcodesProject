@@ -66,9 +66,28 @@ class CeasarCipher:
         if __name__ == "__main__":
             print("File exported: {0}".format(filename))
 
+    def encrypt(self):
+        """
+        Converts an original message into a ciphered message with each letter shifted to the right by the key
+        :return: a string representing the ciphertext.txt
+        """
+        output = ""
+        for i in self.message:
+            if i.upper() in self.alphabet:
+                old_letter = self.alphabet.find(i.upper())
+                # Uses modulus to return the correct index for each letter after the shift
+                # (for cases where the index is outside the range of self.alphabet,
+                #  it wraps back to the beginning of the alphabet)
+                output += self.alphabet[(old_letter + self.key) % 36]
+            else:
+                output += i         # Adds non-alphabet characters directly
+        if __name__ == "__main__":
+            print("Message Encrypted")
+        return output
+
     def decrypt(self):
         """
-        Converts a ciphertext.txt into an original message by shifting each letter to the left by the key
+        Converts a message_to_receive.txt into an original message by shifting each letter to the left by the key
 
         :return: a string representing the original message
         """

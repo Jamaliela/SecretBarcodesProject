@@ -21,7 +21,7 @@ def main():
 
     wn = turtle.Screen()
 
-    text1 = cipher.CeasarCipher("ciphertext.txt", 7, "decrypt")        # assigning text1 the class and opening the message to decrypt
+    text1 = cipher.CeasarCipher("message_to_receive", 7, "decrypt")        # assigning text1 the class and opening the message to decrypt
     barcode_digits = text1.search_numbers()
     exporting = text1.decrypt()                                 # decrypting the file
     text1.export_file(exporting, "exporting_text")              # naming the new file that has been decrypted
