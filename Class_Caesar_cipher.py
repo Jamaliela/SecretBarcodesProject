@@ -47,6 +47,8 @@ class CeasarCipher:
         f = open(self.input_file, "r")                          # opening the input file to read it
         if self.crypt_type == "decrypt":                        # if the action is decrypt the file will be read
             self.cipher = f.read()                   # Set self.cipher to the file contents
+        elif self.crypt_type == "encrypt":
+            self.message = f.read()
         f.close()                                      # closing the file
         if __name__ == "__main__":
             print("File imported: {0}".format(self.input_file))
@@ -109,4 +111,7 @@ class CeasarCipher:
                     for letter in word:
                         if letter in dict:
                             self.barcode_number.append(dict[letter])
-        return self.barcode_number
+        string_barcode_number = ""
+        for i in self.barcode_number:
+            string_barcode_number += str(i)
+        return string_barcode_number
