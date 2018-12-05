@@ -18,10 +18,10 @@ import webbrowser
 
 
 def main():
-
+    global barcode_digits
     wn = turtle.Screen()
 
-    text1 = cipher.CeasarCipher("message_to_receive", 7, "decrypt")        # assigning text1 the class and opening the message to decrypt
+    text1 = cipher.CeasarCipher("C:\\Users\\Jamalie\\Google Drive\\CSC226P01\\message_to_receive.txt", 7, "decrypt")        # assigning text1 the class and opening the message to decrypt
     barcode_digits = text1.search_numbers()
     exporting = text1.decrypt()                                 # decrypting the file
     text1.export_file(exporting, "exporting_text")              # naming the new file that has been decrypted
@@ -31,9 +31,11 @@ def main():
     upc_barcode.is_valid_modulo()
     upc_barcode.translate()
     upc_barcode.position()
-    read = webbrowser.open('https://www.barcodelookup.com/' + barcode_digits)
-    wn.onclick(read)
+    wn.onclick(open_browser)
     wn.mainloop()
 
+def open_browser(x, y):
+    global barcode_digits
+    read = webbrowser.open('https://www.barcodelookup.com/' + barcode_digits)
 
 main()
