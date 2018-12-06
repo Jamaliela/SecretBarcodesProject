@@ -22,7 +22,7 @@ class CeasarCipher:
 
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"            # The alphabet, which will be used to do our shifts
 
-    def __init__(self, input_file = "ciphertext.txt", key = 7, crypt_type = "decrypt"):
+    def __init__(self, input_file = "message_to_receive.txt", key = 7, crypt_type = "decrypt"):
         """
         A constructor for the CaesarCipher class
 

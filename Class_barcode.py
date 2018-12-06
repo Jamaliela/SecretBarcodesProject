@@ -23,7 +23,7 @@ class Barcode:
 
         :param upc_barcode:
         """
-        barcode = cipher.CeasarCipher("message_to_receive", 7, "decrypt")
+        barcode = cipher.CeasarCipher("exporting_text", 7, "decrypt")
         self.upc_barcode = barcode.search_numbers()
         self.tess = turtle.Turtle()
         self.left1 = ""
