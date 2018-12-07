@@ -20,12 +20,11 @@ class CeasarCipher:
     it will decrypt or decrypt the given file
     """
 
-    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"            # The alphabet, which will be used to do our shifts
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"            # The alphabet and numbers, which will be used to do our shifts
 
     def __init__(self, input_file = "message_to_receive.txt", key = 7, crypt_type = "decrypt"):
         """
-        A constructor for the CaesarCipher class
-
+        A constructor for the CaesarCipher class that decrypts secret code
         :param input_file: The file to be decrypted
         :param key: The amount each message/cipher needs shifted
         :param crypt_type: Either encrypt or decrypt
@@ -36,49 +35,49 @@ class CeasarCipher:
         self.cipher = ""                                        # A placeholder for the cipher
         self.crypt_type = crypt_type                            # Either "encrypt" or "decrypt"
         self.import_file()                                      # Calls the import_file() method below
-        self.barcode_number = None
+        self.barcode_number = None                              # initializing the barcode number
 
     def import_file(self):
         """
-        Imports a file stored in the variable self.input_file
+        Imports a file stored in the variable self.input_file in order to use it for decryption
 
         :return: a string representing the contents of the file
         """
         f = open(self.input_file, "r")                          # opening the input file to read it
         if self.crypt_type == "decrypt":                        # if the action is decrypt the file will be read
             self.cipher = f.read()                   # Set self.cipher to the file contents
-        elif self.crypt_type == "encrypt":
-            self.message = f.read()
+        elif self.crypt_type == "encrypt":           # encrypting the message in another py file
+            self.message = f.read()                     # reading message
         f.close()                                      # closing the file
-        if __name__ == "__main__":
+        if __name__ == "__main__":                      # conditional lines to inform user that hte file has been imported
             print("File imported: {0}".format(self.input_file))
 
     def export_file(self, text_to_export, filename):
         """
-        Exports a file called filename
+        creates a file if it doesn't exist and writes in it to export it
 
         :param text_to_export: the string to be written to the exported file
         :param filename: a string representing the name of the file to be exported to
         """
         f = open(filename, "w")                             # creating a new file to write in it the text to export
-        f.write(text_to_export)
+        f.write(text_to_export)                             # opening the file
         f.close()                                           # closing the file
         if __name__ == "__main__":
-            print("File exported: {0}".format(filename))
+            print("File exported: {0}".format(filename))    # exports file once is ready
 
     def encrypt(self):
         """
         Converts an original message into a ciphered message with each letter shifted to the right by the key
-        :return: a string representing the ciphertext.txt
+        :return: a string representing the messagetext.txt
         """
-        output = ""
-        for i in self.message:
-            if i.upper() in self.alphabet:
+        output = ""                             # starting up an empty string
+        for i in self.message:                                  # for loop to access the message
+            if i.upper() in self.alphabet:                          # for every letter in the alphabet
                 old_letter = self.alphabet.find(i.upper())
                 # Uses modulus to return the correct index for each letter after the shift
                 # (for cases where the index is outside the range of self.alphabet,
                 #  it wraps back to the beginning of the alphabet)
-                output += self.alphabet[(old_letter + self.key) % 36]
+                output += self.alphabet[(old_letter + self.key) % 36]     # provides the output after the shifting
             else:
                 output += i         # Adds non-alphabet characters directly
         if __name__ == "__main__":
