@@ -15,5 +15,5 @@ import Class_Caesar_cipher as cipher
 
 encryption = cipher.CeasarCipher("messagetext.txt", 7, "encrypt")
 exporting = encryption.encrypt()                                 # decrypting the file
-encryption.export_file(exporting, "C:\\Users\\Jamalie\\Google Drive\\CSC226P01\\message_to_receive.txt")              # naming the new file that has been decrypted
+encryption.export_file(exporting, "C:\\Users\\alfarozavalae\\Google Drive\\CSC226P01\\message_to_receive.txt")              # naming the new file that has been decrypted
 

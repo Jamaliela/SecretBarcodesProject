@@ -194,7 +194,6 @@ class Barcode:
         self.tess.setpos(-150, -52)                         # setting the position
         for i in range(len(right)):                 # for loop # for loop to run in the len of the first 6 elements retrieved for the center side
             for j in right[i]:                      # nested for loop to run in the first 6-digit binary element inside the center side list
-                print(j)                            # if the element is zero then
                 if j == "0":                        # if the element is zero then
                     self.drawing_white_line()           # a white line is drawn
                 else:
@@ -216,7 +215,9 @@ class Barcode:
         upc_barcode_string = ""
         for i in self.upc_barcode:
             upc_barcode_string += str(i)
-        self.tess.write(upc_barcode_string[0] + "   "+upc_barcode_string[1:6] + "     "+upc_barcode_string[6:11] + "      " +upc_barcode_string[11], move=False, align="left", font=("Arial", 15, "normal"))    #writing the barcod
-
+        self.tess.write(upc_barcode_string[0] + "   "+upc_barcode_string[1:6] + "     "+upc_barcode_string[6:11] + "      " +upc_barcode_string[11], move=False, align="left", font=("Arial", 15, "normal"))    # writing the barcod
+        self.tess.goto(-260, -150)              # setting position to write the barcode at the end
+        self.tess.pencolor("dark blue")
+        self.tess.write("Click on the screen if you want to access the product", move=False, align="left", font=("Arial", 15, "normal"))    # writing the barcod
         return upc_barcode_string
 
