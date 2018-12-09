@@ -44,7 +44,7 @@ class Barcode:
         if len(self.upc_barcode) == 12: # checks the user's input to see if it is a valid 12 digit barcode
             return True                                       # true when the barcode is 12 digits
         else:
-            self.upc_barcode = input("Invalid barcode number. No barcode found")    # program will stop and inform that no barcode has been found
+            self.upc_barcode = input("Invalid barcode number. No barcode found")    # program will inform that no barcode has been found
 
     def is_valid_modulo(self):
         """
