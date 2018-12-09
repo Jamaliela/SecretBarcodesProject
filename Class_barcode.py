@@ -11,47 +11,47 @@
 # Acknowledgements:
 
 ##################################################################################
-import Class_Caesar_cipher as cipher
-import turtle
+import Class_Caesar_cipher as cipher                # importing the ceasar_cipher class with the name cipher
+import turtle                                       # importing the turtle library
+
 
 class Barcode:
     """
-
+    Takes a 12 digit number and check for barcode, if it's a valid one, it draws it and the turtle screen can be click to access barcode online.
     """
+
     def __init__(self):
         """
-
-        :param upc_barcode:
+        A constructor for the barcode class that will check for barcodes and draws them with turtles.
         """
-        barcode = cipher.CeasarCipher("exporting_text", 7, "decrypt")
-        self.upc_barcode = barcode.search_numbers()
-        self.tess = turtle.Turtle()
-        self.left1 = ""
-        self.rights = ""
-        self.guard_left = ""
-        self.center_left = ""
-        self.guard_center = ""
-        self.center_right = ""
-        self.guard_right = ""
+        barcode = cipher.CeasarCipher("exporting_text", 7, "decrypt")            # taking the barcode from the Caesar cipher class
+        self.upc_barcode = barcode.search_numbers()                              # calling the return value from the search number function in the caesar cipher class.
+        self.tess = turtle.Turtle()                                     # creating tess, a turtle object
+        self.left1 = ""                                                 # starting the left side for the barcode drawing
+        self.rights = ""                                               # starting the right side for the barcode drawing
+        self.guard_left = ""                                               # starting the left guard side for the barcode drawing
+        self.center_left = ""                                               # starting the left center side for the barcode drawing
+        self.guard_center = ""                                              # starting the center guard for the barcode drawing
+        self.center_right = ""                                              # starting the right center side for the barcode drawing
+        self.guard_right = ""                                                 # starting the right guard for the barcode drawing
 
     def is_valid_input(self):
         """
-    This function verifies if the barcode is 12 digits and if they are all positive numbers.
-    :param upc_barcode:  parameter that takes the user's input to check if it is a valid 12 digit or not
-    :return: Fruitful. a True or False Boolean value.
-    """
+        This function verifies if the barcode is 12 digits and if they are all positive numbers.
+        :return: Fruitful. a True or False Boolean value.
+        """
 
         if len(self.upc_barcode) == 12: # checks the user's input to see if it is a valid 12 digit barcode
             return True                                       # true when the barcode is 12 digits
         else:
-            self.upc_barcode = input("Invalid number. Enter a 12 digit code [0-9]: ")    # asking user to input a valid barcode again
+            self.upc_barcode = input("Invalid barcode number. No barcode found")    # program will stop and inform that no barcode has been found
 
     def is_valid_modulo(self):
         """
-
-    :param self: takes the user's input and does several operations to the odd and even positions with the module check character method.
-    :return: checkdigit (the variable that should match the last digit of the barcode
-    """
+        This function will check if the 12 digit numbers form a valid barcode by using the module check character.
+        :param self: takes the user's input and does several operations to the odd and even positions with the module check character method.
+        :return: checkdigit (the variable that should match the last digit of the barcode
+        """
         oddnumbers = []                             # creating new list
         for i in range(0,len(self.upc_barcode),2):           # creating for loop to go through the elements in the barcode starting from the first one (odd) and skipping every other one
             oddnumbers.append(self.upc_barcode[i])           # appending into the oddnumbers list each of the elements retrieved in the for loop
@@ -74,17 +74,15 @@ class Barcode:
     def translate(self):
         """
         This function will translate the barcode into binary numbers so that we can draw the turtle by using the turtle module
-        :param barcode: taking the barcode from the user's input
         :return: Fruitful. returns leftl and rights values of the lists lefside and rightside
         """
         leftside = ['0001101', '0011001', '0010011', '0111101', '0100011', '0110001', '0101111', '0111011', '0110111', '0001011']  # creating a list with all the elements from the left side table.
         rightside = ['1110010', '1100110', '1101100', '1000010', '1011100', '1001110', '1010000', '1000100', '1001000', '1110100']          # # creating a list with all the elements from the right side table.
         self.upc_barcode = list(self.upc_barcode)                     # making the barcode a list
-        self.left1 = []                                  # creating an empty list to go through the first 6 elements of barcode
+        self.left1 = []                                  # creating empty list to go through the first 6 elements of barcode
         for i in self.upc_barcode[0:6]:                      # for loop to run in the first 6 elements
             lf = leftside[int(i)]                   # getting the first six elements of the list
             self.left1.append(lf)                        # appending the first 6 elements into the leftl variable
-
         self.rights = []                                 # creating an empty list to go through the remainder 6 elements of barcode
         for i in self.upc_barcode[6:12]:                     # for loop to run in the remainder 6 elements
             rs = rightside[int(i)]                  # getting the first six elements of the list
@@ -93,8 +91,7 @@ class Barcode:
 
     def drawing_blackline(self):
         """
-
-        :param t: turtle object that will draw the black lines in the barcode
+        This function will create black lines according to the binary values for the barcode
         :return: None. Void
         """
 
@@ -108,11 +105,9 @@ class Barcode:
         self.tess.end_fill()                                # finishing the filling of t
         self.tess.forward(2)                                # moving to the right by 2 without leaving a trace
 
-
     def drawing_blackline_long(self):
         """
-
-        :param t: turtle object that will draw the black lines in the barcode for guard and center
+        This function will create long black lines according to the binary values for the barcode
         :return: None. Void
         """
         self.tess.color("black")                            # setting the color of the turtle to be black
@@ -128,8 +123,7 @@ class Barcode:
 
     def drawing_white_line(self):
         """
-
-        :param t: turtle object t to draw the while lines.
+        This function will create black lines according to the binary values for the barcode
         :return: none. Void function .
         """
         self.tess.color("white")                            # setting the color of the turtle to be black
@@ -144,8 +138,7 @@ class Barcode:
 
     def drawing_white_line_long(self):
         """
-
-        :param t: turtle object t to draw the while lines for guard and center
+        This function will create long white lines according to the binary values for the barcode
         :return: none. Void function .
         """
         self.tess.color("white")                            # setting the color of the turtle to be black
@@ -159,7 +152,10 @@ class Barcode:
         self.tess.forward(2)                                # moving to the right by 2 without leaving a trace
 
     def position(self):
-
+        """
+        This class controls the position so that the barcode can be drawn taking the black and white lines functions in the class.
+        :return: the barcode string that is shown in the turtle screen
+        """
         self.tess.hideturtle()                              # hiding turtle to move its position
         self.tess.speed(0)                                  # setting the speed of the turtle
         self.tess.penup()                                   # putting the pen up to start moving
@@ -212,12 +208,12 @@ class Barcode:
         self.tess.goto(-260, -100)              # setting position to write the barcode at the end
         self.tess.pensize(20)                   # setting the pen size
 
-        upc_barcode_string = ""
-        for i in self.upc_barcode:
-            upc_barcode_string += str(i)
+        upc_barcode_string = ""                 # starting an empty string to convert barcode list to barcode
+        for i in self.upc_barcode:              # for each element in the barcode list
+            upc_barcode_string += str(i)        # adding the values to the string.
         self.tess.write(upc_barcode_string[0] + "   "+upc_barcode_string[1:6] + "     "+upc_barcode_string[6:11] + "      " +upc_barcode_string[11], move=False, align="left", font=("Arial", 15, "normal"))    # writing the barcod
         self.tess.goto(-260, -150)              # setting position to write the barcode at the end
-        self.tess.pencolor("dark blue")
+        self.tess.pencolor("dark blue")         # changing pen color to dark blue
         self.tess.write("Click on the screen if you want to access the product", move=False, align="left", font=("Arial", 15, "normal"))    # writing the barcod
         return upc_barcode_string
 

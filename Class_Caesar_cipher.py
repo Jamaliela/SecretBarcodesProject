@@ -40,7 +40,6 @@ class CeasarCipher:
     def import_file(self):
         """
         Imports a file stored in the variable self.input_file in order to use it for decryption
-
         :return: a string representing the contents of the file
         """
         f = open(self.input_file, "r")                          # opening the input file to read it
@@ -63,7 +62,7 @@ class CeasarCipher:
         f.write(text_to_export)                             # opening the file
         f.close()                                           # closing the file
         if __name__ == "__main__":
-            print("File exported: {0}".format(filename))    # exports file once is ready
+            print("File exported: {0}".format(filename))    # prints text to inform user that file is ready
 
     def encrypt(self):
         """
@@ -87,7 +86,6 @@ class CeasarCipher:
     def decrypt(self):
         """
         Converts a message_to_receive.txt into an original message by shifting each letter to the left by the key
-
         :return: a string representing the original message
         """
         # TODO Complete the decrypt method
@@ -101,16 +99,16 @@ class CeasarCipher:
             else:
                 output += i     # Adds non-alphabet characters directly
         if __name__ == "__main__":
-            print("Your message has been decrypted")
+            print("Your message has been decrypted")                # informing user that the file has been decrypted.
         return output
 
     def search_numbers(self):
         """
         This function opens the decrypted file and retrieves the integers that form the barcode to put them together into a string.
-        :return:
+        :return: a barcode in string form
         """
-        self.barcode_number = []
-        dict = {
+        self.barcode_number = []                                # starting a list to add the barcode numbers
+        dict_to_use = {                                                # creating a dictionary and its values and keys
             "0": 0, "1": 1, "2": 2, "3": 3, "4": 4,
             "5": 5, "6": 6, "7": 7, "8": 8, "9": 9,
             "ZERO": 0, "ONE": 1, "TWO": 2, "THREE": 3,
@@ -119,17 +117,17 @@ class CeasarCipher:
             "SECOND": 2, "THIRD": 3, "FOURTH": 4, "SIXTH": 6,
             "SEVENTH": 7, "EIGHTH": 8, "NINTH": 9,
         }
-        expo_file = open("exporting_text", "r")
-        for line in expo_file:
-            words = line.split()
-            for word in words:
-                if word in dict:
-                    self.barcode_number.append(dict[word])
-                else:
-                    for letter in word:
-                        if letter in dict:
-                            self.barcode_number.append(dict[letter])
-        string_barcode_number = ""
-        for i in self.barcode_number:
-            string_barcode_number += str(i)
+        expo_file = open("exporting_text", "r")                     # opening the decrypted file as new name and reading it
+        for line in expo_file:                                      # accessing each line in the file
+            words = line.split()                                    # splitting the words in the lines
+            for word in words:                                      # accessing every word in the file
+                if word in dict_to_use:                                    # if the word is in the dictionary
+                    self.barcode_number.append(dict_to_use[word])          # each word that is a number will be retrieved and appended to barcode
+                else:                                               # otherwise
+                    for letter in word:                             # each letter will be checked and the numbers will be retrieved
+                        if letter in dict_to_use:
+                            self.barcode_number.append(dict_to_use[letter])      # the retrieved numbers are appended in the barcode
+        string_barcode_number = ""                                  # converting the barcode to a string
+        for i in self.barcode_number:                               # for every element in the barcode
+            string_barcode_number += str(i)                         # the element will be added to as string
         return string_barcode_number
