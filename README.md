@@ -1,4 +1,3 @@
-
 # P01: Secret Barcodes
 
 **Author(s)**: Elaheh Jamali & Emely Alfaro Zavala
@@ -161,4 +160,3 @@ Our project was fun and we both feel more comfortable working with classes and w
 Professor Heggens and professor Lovell:
 Both helped us debug and gave us ideas on how our project could be improved.
 Professor Heggens gave us the idea of working with a shared file.
-
