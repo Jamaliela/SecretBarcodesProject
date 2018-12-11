@@ -1,5 +1,5 @@
 
-# P01: decrypting barcodes
+# P01: Secret Barcodes
 
 **Author(s)**: Elaheh Jamali & Emely Alfaro Zavala
 
@@ -81,12 +81,24 @@ Our final repository will include the following:
 ## Summary
 *You'll complete this part at the end of the project.*
 
-Provide a brief summary description of the design and implementation,
-including how much your initial design plan evolved, the final result
-you achieved and the amount of time you spent as a programmer in
-accomplishing these results, including any challenges overcome and
-innovations that were not specifically required by the assignment.
-This section should be no more than three paragraphs.
+For our final project, we decided that we wanted to use Caesar Cipher
+and barcodes in order to show what it would be like to have two people
+send each other encrypted messages with sensitive information.
+Our initial plan was vague and we did not know how we would make
+It real but we started by creating a coded message that at first looked
+Like any random one and we created a Caesar Cipher class that opens the
+File and decrypts it for the user. Our next step was to create a barcode
+Class and adjust it so that it can retrieve the numbers inside of the decrypted
+File even if the numbers were in different formats.
+
+Creating the function to find the numbers in other formats was challenging
+at times because we had not learned about dictionaries yet but with
+some assistance we were able to get it done.
+After getting our program to draw the barcode we revise and discuss whether
+Or not we wanted to include the search function but after meeting with
+Professor Heggens we decided that we wanted to do it and we even
+Used the onclick to get it to work.
+
 
 ## Video
 *You'll complete this part at the end of the project.*
@@ -103,32 +115,57 @@ Your video should include:
 - A credits roll
 
 ## Instructions
-Explain how to use your program and/or play your game.
+
+Our program is a way for sending secret messages. In order to use it, the sender and receiver
+ should have a common Google docs folder in their desktop and the instructions are:
+
+Sender: open the encrypting.py file and run it.
+A file will be created in the specific folder that the sender and receiver share.
+Receiver: open the final_project.py file and run it.
+The program will retrieve the numbers
+and show whether or not the barcode is valid.
+Once the barcode drawing shows on screen, click it and you will be taken to the website
+where the image of the product will show.
+
 
 ## Errors
-*You'll complete this part at the end of the project.*
 
-Every program has bugs. Use this section to create a bullet list of
-all known errors and deficiencies that remain in your code.
+Our program crashes has one limitation. If the sender sends less than 12 digits
+in the message the program notifies the user that it is not a valid barcode but
+ the turtle screen still runs and nothing gets drawn.
+
 
 ## Reflection
-*You'll complete this part at the end of the project.*
 
-Write 2 - 4 paragraphs on your reactions to the final project.
+Emely:
+Our final project help me realize how much I have learned this semester and how
+fun python can be when you know more and when you work on personal projects rather than just
+working on homework. I think our program because I think it is functional and
+because it was very rewarding to make our ideas combine and take the form of something
+that makes us proud.
+I also had fun when doing the video because I like the idea of
+having it online because I think it will be fun to watch it some years from now and
+see how much we will improve in our computer science classes.
+
+Elaheh:
+Secret Barcodes was a very fun project to make and I learned a lot about classes.
+In my opinion CRC cards are the best way to go when you are working with classes
+as you can create the card at the beginning and have an initial idea of what your
+class should include. In our case, creating the cards helped us clarify how our program
+was supposed to work and we did not end up making major changes to it when we were coding.
+As we worked in pairs, it was key to keep good communication and to check on each
+other’s work and ideas because we had to make decisions as we advanced on the project.
+For me making the video was the best part because I got to use the skills I have learned at my
+workplace.
+
+Final reflection:
+Our project was fun and we both feel more comfortable now when working with classes and we
+ feel satisfied with our final work.
+
 
 ## References
-Throughout this project, you've likely used outside resources.
-Reference all ideas or code which are not your own, and describe and
-how you integrated the ideas or code into your program. This includes
-online sources, people who have helped you, and any other resources that
-are not solely your own contribution.
 
----
-**A Note From Emily and Scott to You**
+Professor Heggens and professor Lovell:
+Both helped us debug and gave us ideas on how our project could be improved.
+Professor Heggens gave us the idea of working with a shared file.
 
-While there may seem like a lot of work to this final project, one
-thing to keep in mind is HAVE FUN with it! Create code to
-express your personal interests. Make a fun video, not a boring walkthrough.
-Break up the writing so it’s not so burdensome.
-We will have a live demo session on our last day of class.
-It'll be the most fun final exam you've ever had!
