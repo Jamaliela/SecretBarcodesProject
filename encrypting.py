@@ -1,5 +1,5 @@
 ######################################################################
-# Author: Ela Jamali & Emely Alfaro Zavala
+# Author: Elaheh Jamali & Emely Alfaro Zavala
 # Username: Jamalie & Alfarozavalae
 #
 # Assignment: Final Project

@@ -1,14 +1,14 @@
 ######################################################################
-# Author: Ela Jamali & Emely Alfaro Zavala
+# Author: Elaheh Jamali & Emely Alfaro Zavala
 # Username: Jamalie & Alfarozavalae
 #
 # Assignment: Final Project
 #
 # Purpose: Our program will receive a ciphered message with different characters and will extract the the 12-digit
-# codes found and check for a barcode, afterwards, using the urllib our program will access the web showing the item
+# codes found and check for a barcode, afterwards, using the webbrowser our program will access the web showing the item
 # online.
 ####################################################################################
-# Acknowledgements:
+# Acknowledgements: Dr. Heggen & Professor Lovell
 
 ##################################################################################
 import Class_Caesar_cipher as cipher                 # importing the ceasar_cipher class with the name cipher
@@ -18,6 +18,11 @@ import webbrowser                                       # importing the webbrows
 
 
 def main():
+    """
+    This main function will call all the methods.
+    :param: None
+    :return: None
+    """
     global barcode_digits                               # making the barcode digits a global variable
     wn = turtle.Screen()                                # creating the turtle screen
 
@@ -38,7 +43,7 @@ def open_browser(x, y):
     """
     This function is for taking the barcode digits and going to the look up website to show the item
     :param read: variable to put together the barcodelookup website and the digits.
-    :return: Void.
+    :return: None.
     """
     global barcode_digits                   # using the barcode_digits variable as global
     read = webbrowser.open('https://www.barcodelookup.com/' + barcode_digits)       # opening the website that results from adding the digits to the barcode look up webpage

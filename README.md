@@ -62,9 +62,6 @@ Our final repository will include the following:
  - final_project.py
    - This file will contain our main function where the other files
     will be imported and used according to the user’s needs.
- - Test_suite_final_project.py
-   - In order to make sure our code works properly, we have created a
-   test suite file that will test all fruitful functions.
  - crc_barcode_attributes.jpg  & crc_barcode_methods
    - Contains the CRC card for the Barcode Class.
  - crc_caesar_cipher.jpg

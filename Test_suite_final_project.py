@@ -1,3 +1,15 @@
+######################################################################
+# Author: Elaheh Jamali & Emely Alfaro Zavala
+# Username: Jamalie & Alfarozavalae
+#
+# Assignment: Final Project
+#
+# Purpose: This is a test suite
+####################################################################################
+# Acknowledgements: Dr. Heggen & Professor Lovell
+
+##################################################################################
+
 from final_project import *
 import sys
 

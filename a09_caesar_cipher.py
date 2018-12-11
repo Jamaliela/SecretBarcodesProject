@@ -1,5 +1,5 @@
 ######################################################################
-# Author: Emily Lovell & Scott Heggen      TODO: Ela Jamali & Emely Alfaro Zavala
+# Author: Emily Lovell & Scott Heggen      TODO: Elaheh Jamali & Emely Alfaro Zavala
 # Username: lovelle & heggens             TODO: Jamalie & Alfarozavalae
 #
 # Assignment: A09: Caesar Cipher
