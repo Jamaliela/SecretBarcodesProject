@@ -47,12 +47,6 @@ Our program will receive a ciphered message with different characters
   - a09_caesar_cipher.py
 
 
-**NOTE 1**: Your initial design plan may not fully reflect your final product,
-as projects evolve over time.
-
-**NOTE 2**: Do not skip the CRC card part of Milestone 1! We will be providing
-immediate feedback which will be helpful in succeeding in the rest of the project.
-
 ## Files
 Our final repository will include the following:
 - A08_upc_start.py
@@ -79,7 +73,6 @@ Our final repository will include the following:
     will be useful for keeping record and a good reference for the code.
 
 ## Summary
-*You'll complete this part at the end of the project.*
 
 For our final project, we decided that we wanted to use Caesar Cipher
 and barcodes in order to show what it would be like to have two people
