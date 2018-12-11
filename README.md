@@ -101,18 +101,9 @@ Used the onclick to get it to work.
 
 
 ## Video
-*You'll complete this part at the end of the project.*
 
-In this section, add a publicly available link to a YouTube video
-which you will create, demonstrating how to use your program.
-The video is a short (less than 5 minutes) demonstration video.
-Your video should include:
-- A title screen, including the class name, your name, and the project title
-- You briefly discussing your project and it's motivation
-- A demonstration on how to use the program, much like a marketing video.
-- A short discussion about what you learned through the process of building the program.
-- DO NOT include a section where you scroll through the code. Your video should include NO code.
-- A credits roll
+To watch our video please click on the following link:
+https://www.youtube.com/watch?v=ZpE_5K4JTHE&feature=youtu.be
 
 ## Instructions
 
@@ -130,7 +121,7 @@ where the image of the product will show.
 
 ## Errors
 
-Our program crashes has one limitation. If the sender sends less than 12 digits
+Our program has one limitation. If the sender sends less than 12 digits
 in the message the program notifies the user that it is not a valid barcode but
  the turtle screen still runs and nothing gets drawn.
 
