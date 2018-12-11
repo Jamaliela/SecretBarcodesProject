@@ -8,7 +8,7 @@
 # codes found and check for a barcode, afterwards, using the urllib our program will access the web showing the item
 # online.
 ####################################################################################
-# Acknowledgements:
+# Acknowledgements: Dr. Heggen & Professor Lovell
 
 ##################################################################################
 
